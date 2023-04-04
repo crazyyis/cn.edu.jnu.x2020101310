@@ -5,6 +5,6 @@ public class BollingGame {
     }
 
     public int score() {
-        return -1;
+        return 0;
     }
 }
