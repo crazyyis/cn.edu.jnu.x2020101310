@@ -40,14 +40,10 @@ public class BollingGameUnitTest {
     @Test
     public void testAStrike(){
         rollAStrike();
-        game.roll(4);
+        game.roll(3);
         game.roll(4);
         repeatedRoll(0, 16);
-        assertEquals(28, game.score());
-    }
-
-    private void rollAStrike() {
-        game.roll(10); // strike
+        assertEquals(24, game.score());
     }
 
     private void rollASpare() {
@@ -55,6 +51,9 @@ public class BollingGameUnitTest {
         game.roll(5);
     }
 
+    private void rollAStrike() {
+        game.roll(10);
+    }
 
     private void repeatedRoll(int pins, int times) {
         for(int i=0;i<times;i++)
