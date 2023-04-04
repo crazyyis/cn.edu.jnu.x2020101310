@@ -40,10 +40,15 @@ public class BollingGameUnitTest {
     @Test
     public void testAStrike(){
         rollAStrike();
-        game.roll(3);
+        game.roll(4);
         game.roll(4);
         repeatedRoll(0, 16);
-        assertEquals(24, game.score());
+        assertEquals(26, game.score());
+    }
+    @Test
+    public void testFullStrike(){
+        repeatedRoll(10, 12);
+        assertEquals(300, game.score());
     }
 
     private void rollASpare() {
