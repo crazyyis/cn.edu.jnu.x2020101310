@@ -32,11 +32,15 @@ public class BollingGameUnitTest {
 
     @Test
     public void testASpare() {
-        game.roll(5);
-        game.roll(5); //spare
+        rollAspare();
         game.roll(4);
         repeatedRoll(0,17);
         assertEquals(18,game.score());
+    }
+
+    private void rollAspare() {
+        game.roll(5);
+        game.roll(5);
     }
 
 

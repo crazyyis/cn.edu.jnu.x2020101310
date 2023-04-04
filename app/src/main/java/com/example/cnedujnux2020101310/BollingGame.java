@@ -14,7 +14,7 @@ public class BollingGame {
         int frameIndex = 0;
         for (int frame = 0; frame < 10; frame++) {
             if (frameIndex < 19) {
-                if (rolls[frameIndex] + rolls[frameIndex + 1] == 10) // spare
+                if (isaSpare(frameIndex)) // spare
                 {
                     score += 10 + rolls[frameIndex + 2];
                     frameIndex += 2;
@@ -27,5 +27,9 @@ public class BollingGame {
         }
         return score;
 
+    }
+
+    private boolean isaSpare(int frameIndex) {
+        return rolls[frameIndex] + rolls[frameIndex + 1] == 10;
     }
 }
