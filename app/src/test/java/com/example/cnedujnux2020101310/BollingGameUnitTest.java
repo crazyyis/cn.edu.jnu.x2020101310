@@ -30,10 +30,21 @@ public class BollingGameUnitTest {
         assertEquals(20,game.score());
     }
 
+    @Test
+    public void testASpare() {
+        game.roll(5);
+        game.roll(5); //spare
+        game.roll(4);
+        repeatedRoll(0,17);
+        assertEquals(18,game.score());
+    }
+
+
     private void repeatedRoll(int pins, int times) {
         for(int i=0;i<times;i++)
         {
             game.roll(pins);
         }
     }
+
 }
